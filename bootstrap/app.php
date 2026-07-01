@@ -18,9 +18,8 @@ $app = Application::configure(basePath: dirname(__DIR__))
     ->withExceptions(function (Exceptions $exceptions): void {
     })->create();
 
-// On Vercel, filesystem is read-only except /tmp.
-// Redirect all Laravel write paths to /tmp/storage.
-if (isset($_ENV['VERCEL'])) {
+// Vercel runtime root is /var/task — use /tmp for writes since app dir is read-only.
+if (is_dir('/var/task')) {
     $app->useStoragePath('/tmp/storage');
 }
 
