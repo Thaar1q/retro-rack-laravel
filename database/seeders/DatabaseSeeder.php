@@ -106,7 +106,7 @@ class DatabaseSeeder extends Seeder
                 'tag'          => 'SEJARAH',
                 'excerpt'      => 'Bagaimana Sony mengubah cara dunia mendengarkan musik selamanya melalui kaset portabel.',
                 'image'        => $copyImage('Artikel_SejarahWalkman.jpg', 'articles'),
-                'body'         => 'Pada akhir tahun 1970-an, mendengarkan musik adalah pengalaman yang terikat pada ruang tamu atau sistem audio di dalam mobil. Hal ini berubah secara dramatis ketika Sony memperkenalkan Walkman pertama pada tahun 1979. Perangkat ini tidak sekadar mengubah medium fisik pemutar musik, melainkan melahirkan budaya mendengarkan musik secara privat di ruang publik. Dengan menggunakan kaset pita magnetik, Walkman menghadirkan kompromi yang brilian antara kualitas suara dan portabilitas, memicu tren yang kelak menjadi fondasi bagi era pemutar MP3 dan layanan streaming digital masa kini.',
+                'body'         => '',
                 'published_at' => now()->subDays(5),
             ],
             [
@@ -114,7 +114,29 @@ class DatabaseSeeder extends Seeder
                 'tag'          => 'AUDIO',
                 'excerpt'      => 'Mengapa banyak audiophile modern masih memburu pemutar piringan hitam klasik era 70-an dan 80-an.',
                 'image'        => $copyImage('Artikel_TurntableBekas.jpg', 'articles'),
-                'body'         => 'Di tengah kemudahan akses audio resolusi tinggi digital, popularitas turntable atau pemutar piringan hitam klasik justru kembali memuncak. Alasan utamanya bukan sekadar nostalgia, melainkan karakter suara analog yang khas. Perangkat keras dari era keemasan audio seperti era 70-an menggunakan komponen mekanis masif—seperti motor direct drive presisi dan tonearm dengan bahan berkualitas—yang sulit disamai oleh produk masa kini pada rentang harga serupa. Resonansi suara yang dihasilkan memiliki kehangatan harmonik yang tidak dapat direplikasi sempurna secara digital.',
+                'body'         => 'Di era ketika jutaan lagu dapat diakses hanya dengan satu ketukan jari, pemutar piringan hitam atau turntable klasik justru kembali meraih popularitas yang luar biasa. Fenomena ini bukan sekadar tren sesaat, melainkan sebuah bentuk apresiasi terhadap kualitas audio analog yang hangat, kaya, dan memiliki karakter unik. Bagi para penikmat musik, ritual meletakkan jarum di atas piringan hitam menawarkan pengalaman mendengarkan yang jauh lebih intim dan fokus.
+
+
+Membeli turntable bekas dari era keemasan audio, khususnya periode 1970-an hingga awal 1980-an, sering kali menjadi pilihan terbaik dibandingkan membeli unit baru di kelas harga menengah ke bawah. Pabrikan pada era tersebut, seperti Technics, Pioneer, dan Sansui, merancang perangkat mereka dengan material kelas berat dan ketepatan mekanis (over-engineered) yang sangat mengagumkan dan dirancang untuk bertahan lintas generasi.
+
+
+Namun, terjun ke pasar perangkat audio vintage tentu membutuhkan kejelian ekstra. Tidak semua turntable tua layak untuk direstorasi, dan beberapa kerusakan mekanis bisa memakan biaya perbaikan yang melebihi harga beli unit itu sendiri. Oleh karena itu, ada beberapa komponen krusial yang wajib diperiksa sebelum Anda memutuskan untuk membawa pulang sebuah turntable klasik.
+
+
+
+    - **Kestabilan Motor:** Pastikan putaran piringan stabil di angka 33 1/3 dan 45 RPM tanpa adanya fluktuasi suara (wow and flutter).
+
+    - **Kondisi Tonearm:** Periksa pergerakan tonearm yang harus sangat mulus tanpa hambatan fisik saat digerakkan dari pinggir ke tengah.
+
+    - **Ketersediaan Sparepart:** Pilih merek populer yang komponen penggantinya seperti jarum (stylus) dan sabuk pemutar (belt) masih mudah ditemukan di pasaran.
+
+    - **Sistem Kabel:** Pastikan kabel RCA dan kabel ground bawaan masih utuh dan tidak menyebabkan dengung (humming) saat disambungkan ke amplifier.
+
+
+
+Dengan panduan yang tepat dan sedikit kesabaran, menemukan turntable vintage yang sempurna dapat menjadi awal dari perjalanan panjang menikmati musik dalam bentuk fisiknya yang paling memukau dan artistik.
+
+---',
                 'published_at' => now()->subDays(10),
             ],
             [
@@ -122,7 +144,29 @@ class DatabaseSeeder extends Seeder
                 'tag'          => 'OPINI',
                 'excerpt'      => 'Kamera instant lipat pertama Polaroid. Karya seni teknik yang mengubah fotografi instan.',
                 'image'        => $copyImage('Produk_PolaroidSX-70.jpg', 'articles'),
-                'body'         => 'Polaroid SX-70 adalah kamera instan SLR lipat yang diproduksi oleh Polaroid Corporation. Kamera ini diperkenalkan pada tahun 1972 dan merupakan salah satu desain paling ikonik dalam sejarah fotografi instan. Kamera ini tidak hanya menawarkan kemampuan untuk melihat pratinjau gambar melalui lensa (SLR), tetapi juga dapat dilipat menjadi bentuk datar, sehingga sangat portabel. Ini adalah kamera pertama yang menggunakan film integral Polaroid yang mengembangkan foto di depan mata Anda.',
+                'body'         => 'Di antara berbagai inovasi teknologi abad ke-20, kamera Polaroid SX-70 berdiri sebagai salah satu mahakarya desain industri yang paling ikonis. Diluncurkan pertama kali pada tahun 1972, SX-70 bukan sekadar kamera instan biasa; ia adalah kamera Single-Lens Reflex (SLR) instan pertama yang memungkinkan fotografer melihat tepat apa yang akan ditangkap oleh lensa. Desain lipatnya yang futuristik menjadikannya perangkat ajaib yang mampu bertransformasi dari benda seukuran buku tipis menjadi sebuah kamera profesional yang kokoh.
+
+
+Keajaiban sejati SX-70 terletak pada teknologi film integral yang diperkenalkannya. Berbeda dengan generasi Polaroid sebelumnya yang mengharuskan penggunanya mengelupas lapisan kimia dengan tangan, film SX-70 keluar dari kamera dalam keadaan kering dan perlahan memunculkan gambar di hadapan mata penggunanya. Proses pengembangan gambar yang terjadi di bawah sinar matahari ini memberikan sensasi magis yang belum pernah ada sebelumnya.
+
+
+Sistem optik dan mekanis yang dijejalkan ke dalam bodi ramping SX-70 sangatlah kompleks dan revolusioner. Dengan memanfaatkan serangkaian cermin dan lensa fresnel yang presisi, kamera ini memadukan kemampuan pemfokusan manual yang tajam dengan portabilitas ekstrem. Tidak heran jika SX-70 segera menjadi perangkat favorit para seniman, arsitek, dan desainer, termasuk nama-nama besar seperti Andy Warhol dan Ansel Adams.
+
+
+
+    - **Material Premium:** Bodi kamera dilapisi kulit asli dan baja tahan karat, memberikan kesan mewah yang tak lekang oleh waktu.
+
+    - **Fokus Jarak Dekat:** SX-70 mampu mengambil gambar fokus dengan jarak sangat dekat hingga 10.4 inci, sempurna untuk fotografi makro instan.
+
+    - **Eksposur Otomatis:** Dilengkapi dengan sensor cahaya pintar yang mampu mengatur kecepatan rana dari hitungan milidetik hingga beberapa detik secara otomatis.
+
+    - **Baterai pada Kartrid:** Setiap bungkus film SX-70 klasik dilengkapi baterai tipis di dalamnya, memastikan kamera selalu mendapat daya baru setiap kali film diganti.
+
+
+
+Hari ini, berkat komunitas pencinta film analog dan perusahaan modern yang kembali memproduksi film format aslinya, Polaroid SX-70 kembali menemukan napasnya. Menggunakan SX-70 di era modern bukan hanya tentang menangkap momen, melainkan merayakan harmoni antara teknik rekayasa yang brilian dan estetika desain yang murni.
+
+---',
                 'published_at' => now()->subDays(15),
             ],
             [
@@ -130,15 +174,57 @@ class DatabaseSeeder extends Seeder
                 'tag'          => 'TUTORIAL',
                 'excerpt'      => 'Langkah-langkah dasar merestorasi radio tabung peninggalan kakek nenek Anda.',
                 'image'        => $copyImage('Artikel_RestorasiRadioTabungAntik.jpg', 'articles'),
-                'body'         => 'Merestorasi radio tabung adalah hobi yang memuaskan yang menggabungkan elektronik, pertukangan, dan sejarah. Langkah pertama adalah keamanan: selalu ingat bahwa radio tabung beroperasi pada tegangan tinggi yang mematikan. Setelah memastikan keamanan, Anda dapat mulai mengganti kapasitor tua (re-capping), yang hampir selalu diperlukan untuk radio dari era 1930-an hingga 1950-an. Kemudian, bersihkan sasis, periksa tabung vakum, dan kembalikan kilau kabinet kayu aslinya.',
+                'body'         => 'Bagi mereka yang memiliki ketertarikan mendalam pada elektronika dan sejarah, merestorasi radio tabung antik menawarkan kepuasan hobi yang tiada duanya. Proyek ini menggabungkan berbagai keahlian—mulai dari pemahaman kelistrikan, seni pertukangan kayu untuk memperbaiki kabinet, hingga kesabaran dalam mencari komponen pengganti yang langka. Sebuah radio kayu besar yang mungkin tampak kusam di sudut garasi kakek Anda sebenarnya menyimpan potensi besar untuk dihidupkan kembali sebagai pusat perhatian di ruang keluarga.
+
+
+Langkah paling krusial sebelum memulai proyek restorasi radio tabung adalah menyadari dan mematuhi protokol keselamatan. Berbeda dengan perangkat elektronik modern yang menggunakan tegangan rendah berkat transistor, radio tabung vakum beroperasi dengan tegangan arus searah (DC) yang sangat tinggi, sering kali melebihi 300 volt. Listrik bertegangan tinggi ini dapat tersimpan di dalam kapasitor elektrolit bahkan setelah kabel listrik dicabut berhari-hari lamanya, menjadikannya sangat berbahaya jika disentuh tanpa kehati-hatian.
+
+
+Proses perbaikan sirkuit biasanya dimulai dengan apa yang disebut oleh para penghobi sebagai "re-capping", yakni penggantian semua kapasitor kertas dan kapasitor elektrolit lama. Kapasitor berbahan kertas dari era 1930-an hingga 1950-an memiliki tingkat kegagalan nyaris 100 persen di masa sekarang karena bahan penyekatnya (dielektrik) yang menyerap kelembaban seiring berjalannya waktu. Memaksa menghidupkan radio tua dengan kapasitor asli dapat menyebabkan kerusakan fatal pada transformator daya yang sangat sulit dicari penggantinya.
+
+
+Setelah urusan kelistrikan selesai dan radio kembali dapat menangkap siaran dengan jernih, perhatian biasanya beralih pada perbaikan estetika kabinet kayu. Kebanyakan radio antik dibalut dengan pelapis kayu tipis (veneer) mewah seperti walnut atau mahoni yang sering kali sudah terkelupas atau tergores. Mengembalikan kilau orisinalnya menuntut ketelatenan dalam proses pengelupasan pernis lama, pengamplasan halus, hingga penerapan lapisan pelindung akhir seperti lacquer atau shellac.
+
+
+Selain kabinet kayu, detail estetika lain seperti kain penutup speaker (grill cloth) dan kenop putar (knob) juga memainkan peran besar dalam tampilan akhir. Kain penutup asli yang robek sering kali harus diganti dengan kain reproduksi modern yang meniru pola tenunan akustik era tersebut. Proses mencari suku cadang dan material semacam ini justru menjadi petualangan tersendiri bagi para penggiat restorasi.
+
+
+Untuk memastikan proyek restorasi Anda berjalan aman dan sukses, perhatikan tahapan-tahapan penting berikut ini:
+
+
+
+    - **Jangan Pernah Langsung Dicolok:** Hindari godaan untuk mencolokkan radio tua langsung ke stopkontak; gunakan alat bernama "dim bulb tester" atau Variac untuk menaikkan tegangan secara perlahan dan aman.
+
+    - **Dokumentasi Menyeluruh:** Ambil foto beresolusi tinggi dari setiap sudut sasis dan jalur perkabelan sebelum Anda memotong atau mencabut komponen apa pun sebagai panduan perakitan kembali.
+
+    - **Ganti Kabel Daya:** Kabel listrik bawaan yang sudah getas dan mengelupas wajib segera diganti dengan kabel berinsulasi ganda modern untuk mencegah risiko korsleting atau sengatan listrik.
+
+    - **Skema Sirkuit:** Selalu berusahalah mendapatkan skema (schematic diagram) asli dari model radio tersebut, seperti yang sering ditemukan pada literatur klasik Rider\'s Perpetual Troubleshooter\'s Manuals.
+
+
+
+Mendengarkan siaran langsung dari radio tabung yang bersinar hangat memberikan nuansa nostalgia akustik yang mustahil disamai oleh pengeras suara pintar modern. Resonansi suara yang dipancarkan melalui kabinet kayu tua tersebut tidak hanya menggetarkan udara, tetapi juga menjadi saksi bisu kebangkitan kembali mahakarya rekayasa masa lalu di tangan Anda yang terampil.
+
+---',
                 'published_at' => now()->subDays(20),
             ],
             [
-                'title'        => 'Koleksi Konsol Game Retro Terbaik',
+                'title'        => 'Tren Koleksi Konsol Game Retro',
                 'tag'          => 'REVIEW',
                 'excerpt'      => 'Rangkuman konsol retro wajib yang layak Anda mainkan kembali di era modern.',
                 'image'        => $copyImage('Artikel_KonsolTerbaik.jpg', 'articles'),
-                'body'         => 'Nostalgia bermain video game jadul selalu menemukan tempat khusus. Walau grafisnya hanya sebatas 8-bit atau 16-bit, kualitas *gameplay* dan musik MIDI dari perangkat retro memberikan pengalaman tak tergantikan. Konsol seperti Sega Mega Drive dan Super Nintendo adalah bukti puncak rivalitas hardware game yang memunculkan banyak inovasi desain.',
+                'body'         => 'Evolusi industri video game modern dengan grafis fotorealistis dan realitas virtual yang menakjubkan nyatanya tidak serta-merta mengubur pesona konsol klasik. Di tengah gempuran teknologi mutakhir, banyak gamer yang justru merindukan kesederhanaan dan tantangan murni yang ditawarkan oleh mesin-mesin game 8-bit dan 16-bit dari era 80-an serta 90-an. Nostalgia ini telah memicu kebangkitan kembali minat terhadap konsol retro di seluruh dunia.
+
+
+Perangkat legendaris seperti Nintendo Entertainment System (NES) dan Sega Mega Drive memiliki tempat istimewa karena mereka meletakkan fondasi bagi hampir seluruh genre game modern. Keterbatasan perangkat keras pada masa itu memaksa para pengembang untuk fokus secara maksimal pada kualitas gameplay, desain level yang cerdik, dan musik chiptune yang sangat ikonik hingga mudah melekat di ingatan.
+
+
+Mengoleksi konsol retro bukan sekadar tentang menyimpan barang antik, melainkan upaya melestarikan potongan sejarah interaktif. Setiap kaset atau kartrid yang ditiup sebelum dimasukkan ke dalam slot memberikan sensasi fisik yang sepenuhnya hilang pada era distribusi game digital saat ini. Sensasi taktil ini menjadi daya tarik tersendiri bagi generasi yang tumbuh bersamanya maupun generasi baru yang penasaran.
+
+
+Bagi para kolektor pemula, membangun koleksi retro yang ideal membutuhkan dedikasi dan ketelitian. Memilih antara menggunakan televisi CRT asli untuk akurasi visual yang maksimal atau menggunakan upscaler modern untuk kenyamanan layar datar adalah salah satu dari sekian banyak keputusan menarik yang akan dihadapi dalam perjalanan menghidupkan kembali masa keemasan video game.
+
+---',
                 'published_at' => now()->subDays(25),
             ],
         ];
