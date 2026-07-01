@@ -18,8 +18,10 @@ $app = Application::configure(basePath: dirname(__DIR__))
     ->withExceptions(function (Exceptions $exceptions): void {
     })->create();
 
-// Vercel runtime root is /var/task — use /tmp for writes since app dir is read-only.
+// Vercel runtime root is /var/task — filesystem is read-only.
+// Redirect both bootstrap cache and storage to /tmp (writable).
 if (is_dir('/var/task')) {
+    $app->useBootstrapPath('/tmp/bootstrap');
     $app->useStoragePath('/tmp/storage');
 }
 
