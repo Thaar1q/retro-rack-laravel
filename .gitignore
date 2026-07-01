@@ -16,10 +16,11 @@
 /auth.json
 /node_modules
 
-/bootstrap/cache/*.php
+bootstrap/cache/*.php
 /public/fonts-manifest.dev.json
 /public/hot
 /public/storage
+/database/database.sqlite
 /storage/*.key
 /storage/pail
 /vendor
