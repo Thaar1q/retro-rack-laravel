@@ -1,7 +1,39 @@
 <?php
 
+// --- Static file passthrough ---
+// vercel-php routes all requests here. Serve files from public/ directly
+// without booting Laravel — faster and avoids 404s for CSS/JS/images.
+$requestPath = parse_url($_SERVER['REQUEST_URI'] ?? '/', PHP_URL_PATH);
+$publicFile  = __DIR__ . '/../public' . $requestPath;
+
+if ($requestPath !== '/' && is_file($publicFile)) {
+    $ext  = strtolower(pathinfo($publicFile, PATHINFO_EXTENSION));
+    $mime = [
+        'css'   => 'text/css; charset=utf-8',
+        'js'    => 'application/javascript; charset=utf-8',
+        'ico'   => 'image/x-icon',
+        'png'   => 'image/png',
+        'jpg'   => 'image/jpeg',
+        'jpeg'  => 'image/jpeg',
+        'gif'   => 'image/gif',
+        'svg'   => 'image/svg+xml',
+        'woff'  => 'font/woff',
+        'woff2' => 'font/woff2',
+        'ttf'   => 'font/ttf',
+        'json'  => 'application/json',
+        'txt'   => 'text/plain',
+        'map'   => 'application/json',
+    ][$ext] ?? 'application/octet-stream';
+
+    header('Content-Type: ' . $mime);
+    header('Cache-Control: public, max-age=31536000, immutable');
+    readfile($publicFile);
+    exit;
+}
+
+// --- Vercel /tmp setup ---
+// /var/task filesystem is read-only. Bootstrap cache and storage must live in /tmp.
 if (is_dir('/var/task')) {
-    // 1. Create all writable directories in /tmp.
     foreach ([
         '/tmp/bootstrap/cache',
         '/tmp/storage/framework/views',
@@ -16,15 +48,12 @@ if (is_dir('/var/task')) {
         }
     }
 
-    // 2. Copy bootstrap/providers.php to /tmp/bootstrap so that
-    //    useBootstrapPath('/tmp/bootstrap') can find it.
+    // providers.php must be readable from the /tmp bootstrap path.
     if (!file_exists('/tmp/bootstrap/providers.php')) {
         copy(__DIR__ . '/../bootstrap/providers.php', '/tmp/bootstrap/providers.php');
     }
 
-    // 3. Copy build-generated cache files to /tmp (writable).
-    //    These are created by buildCommand with correct /var/task paths.
-    //    Laravel will update them in /tmp on subsequent boots.
+    // Copy build-generated cache files so Laravel can read and update them.
     foreach (['packages.php', 'services.php'] as $file) {
         $src = __DIR__ . '/../bootstrap/cache/' . $file;
         $dst = '/tmp/bootstrap/cache/' . $file;
@@ -33,7 +62,7 @@ if (is_dir('/var/task')) {
         }
     }
 
-    // 4. Create public/storage symlink so asset('storage/...') URLs resolve.
+    // Runtime symlink: asset('storage/...') resolves to /tmp/storage/app/public.
     $link = __DIR__ . '/../public/storage';
     if (!file_exists($link) && !is_link($link)) {
         @symlink('/tmp/storage/app/public', $link);
