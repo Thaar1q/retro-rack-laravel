@@ -1,6 +1,6 @@
 @props(['product', 'type' => 'large'])
 
-<div class="product-card {{ $type == 'small' ? 'small-card' : 'large-card' }}">
+<div class="product-card {{ $type == 'small' ? 'small-card' : 'large-card' }}" onclick="window.location.href='{{ route('detail.produk', $product->slug) }}'" style="cursor: pointer;">
     @if($product->image)
         <img src="{{ $product->imageUrl() }}" alt="{{ $product->name }}" class="product-img" style="object-fit: cover;">
     @else
@@ -26,6 +26,7 @@
             </div>
             <div class="product-actions">
                 <form action="{{ route('cart.add') }}" method="POST" style="flex:1; display:flex;"
+                      @click.stop
                       x-data="{ loading: false, showQty: false, qty: 1, stock: {{ $product->stock }} }"
                       @submit.prevent="loading = true; fetch('{{ route('cart.add') }}', { method: 'POST', body: new FormData($el), headers: { 'X-Requested-With': 'XMLHttpRequest', 'Accept': 'application/json' } }).then(res => { if(res.status === 401) { window.location.href = '/login'; return null; } return res.json(); }).then(data => { if(!data) return; loading = false; if(data.success) { window.dispatchEvent(new CustomEvent('cart-updated', { detail: data.cart_count })); showToast(data.message); showQty = false; qty = 1; } else { showToast(data.message); } })">
                     @csrf
@@ -51,7 +52,7 @@
                         </div>
                     </div>
                 </form>
-                <a href="{{ route('detail.produk', $product->slug) }}" class="btn btn-outline" style="flex:1;">Lihat Detail</a>
+                <a href="{{ route('detail.produk', $product->slug) }}" class="btn btn-outline" style="flex:1;" @click.stop>Lihat Detail</a>
             </div>
         @else
             {{-- Small Card Layout --}}
@@ -61,6 +62,7 @@
                 <span class="badge-year">{{ $product->year }}</span>
             </div>
             <form action="{{ route('cart.add') }}" method="POST" style="margin-top:auto;"
+                  @click.stop
                   x-data="{ loading: false, showQty: false, qty: 1, stock: {{ $product->stock }} }"
                   @submit.prevent="loading = true; fetch('{{ route('cart.add') }}', { method: 'POST', body: new FormData($el), headers: { 'X-Requested-With': 'XMLHttpRequest', 'Accept': 'application/json' } }).then(res => { if(res.status === 401) { window.location.href = '/login'; return null; } return res.json(); }).then(data => { if(!data) return; loading = false; if(data.success) { window.dispatchEvent(new CustomEvent('cart-updated', { detail: data.cart_count })); showToast(data.message); showQty = false; qty = 1; } else { showToast(data.message); } })">
                 @csrf

@@ -66,6 +66,12 @@ class Product extends Model
             return $this->image;
         }
         
+        // If image exists in public/images, use it (for seeded images tracked in Git)
+        if (file_exists(public_path('images/' . $this->image))) {
+            return asset('images/' . $this->image);
+        }
+        
+        // Fallback to storage for newly uploaded images
         return asset('storage/' . $this->image);
     }
 }

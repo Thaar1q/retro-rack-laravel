@@ -41,12 +41,28 @@
     <table class="admin-table">
         <thead>
             <tr>
-                <th style="width: 60px;">ID</th>
+                <th style="width: 60px;">
+                    <a href="{{ request()->fullUrlWithQuery(['sort' => 'id', 'direction' => request('sort') === 'id' && request('direction') === 'asc' ? 'desc' : 'asc']) }}" style="color: inherit; text-decoration: none;">
+                        ID @if(request('sort') === 'id') {!! request('direction') === 'asc' ? '↑' : '↓' !!} @endif
+                    </a>
+                </th>
                 <th style="width: 100px;">THUMBNAIL</th>
-                <th>NAMA PRODUK</th>
+                <th>
+                    <a href="{{ request()->fullUrlWithQuery(['sort' => 'name', 'direction' => request('sort') === 'name' && request('direction') === 'asc' ? 'desc' : 'asc']) }}" style="color: inherit; text-decoration: none;">
+                        NAMA PRODUK @if(request('sort') === 'name') {!! request('direction') === 'asc' ? '↑' : '↓' !!} @endif
+                    </a>
+                </th>
                 <th>KATEGORI</th>
-                <th>HARGA</th>
-                <th>STOK</th>
+                <th>
+                    <a href="{{ request()->fullUrlWithQuery(['sort' => 'price', 'direction' => request('sort') === 'price' && request('direction') === 'asc' ? 'desc' : 'asc']) }}" style="color: inherit; text-decoration: none;">
+                        HARGA @if(request('sort') === 'price') {!! request('direction') === 'asc' ? '↑' : '↓' !!} @endif
+                    </a>
+                </th>
+                <th>
+                    <a href="{{ request()->fullUrlWithQuery(['sort' => 'stock', 'direction' => request('sort') === 'stock' && request('direction') === 'asc' ? 'desc' : 'asc']) }}" style="color: inherit; text-decoration: none;">
+                        STOK @if(request('sort') === 'stock') {!! request('direction') === 'asc' ? '↑' : '↓' !!} @endif
+                    </a>
+                </th>
                 <th>STATUS</th>
                 <th style="text-align: right;">AKSI</th>
             </tr>

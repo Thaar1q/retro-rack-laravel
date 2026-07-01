@@ -22,7 +22,17 @@ class ProductController extends Controller
             $query->where('category_id', $request->category);
         }
 
-        $products   = $query->latest()->paginate(10)->withQueryString();
+        $sort = $request->get('sort', 'created_at');
+        $direction = $request->get('direction', 'desc');
+        
+        $allowedSorts = ['id', 'name', 'price', 'stock', 'year', 'created_at'];
+        if (in_array($sort, $allowedSorts)) {
+            $query->orderBy($sort, $direction === 'asc' ? 'asc' : 'desc');
+        } else {
+            $query->latest();
+        }
+
+        $products   = $query->paginate(10)->withQueryString();
         $categories = Category::all();
 
         return view('admin.produk', compact('products', 'categories'));
