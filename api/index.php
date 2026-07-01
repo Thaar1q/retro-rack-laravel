@@ -1,13 +1,18 @@
 <?php
-if (isset($_SERVER['VERCEL']) || isset($_ENV['VERCEL'])) {
-    $storage = '/tmp/storage';
-    $dirs = ['/framework/views', '/framework/cache', '/framework/sessions', '/logs'];
+// Create required Laravel storage directories in Vercel's writable /tmp.
+// Must run before Laravel boots (which needs these dirs to exist).
+if (isset($_ENV['VERCEL'])) {
+    $dirs = [
+        '/tmp/storage/framework/views',
+        '/tmp/storage/framework/cache/data',
+        '/tmp/storage/framework/sessions',
+        '/tmp/storage/logs',
+    ];
     foreach ($dirs as $dir) {
-        if (!is_dir($storage . $dir)) {
-            mkdir($storage . $dir, 0777, true);
+        if (!is_dir($dir)) {
+            mkdir($dir, 0777, true);
         }
     }
 }
 
-// Forward Vercel requests to normal index.php
 require __DIR__ . '/../public/index.php';
