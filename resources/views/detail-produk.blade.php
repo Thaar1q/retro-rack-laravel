@@ -84,7 +84,7 @@
                                         <button type="button" @click="if(qty < stock) qty++" class="qty-btn">&plus;</button>
                                     </div>
                                     <button type="submit" class="btn btn-dark" style="flex: 1;" :class="{ 'is-loading': loading }">
-                                        <span x-show="!loading">Tambah (×<span x-text="qty"></span>) &rarr;</span>
+                                        <span x-show="!loading">&#10003;</span>
                                         <span x-show="loading" style="display:none;">...</span>
                                     </button>
                                     <button type="button" @click="showQty = false; qty = 1" class="btn btn-outline" style="padding: 16px;">&times;</button>
