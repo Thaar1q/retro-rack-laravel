@@ -77,7 +77,7 @@
                                     </button>
                                 </div>
                                 {{-- Expanded: qty stepper + confirm --}}
-                                <div x-show="showQty" style="display: none; align-items: center; gap: 12px;">
+                                <div x-show="showQty" style="display: none;" class="qty-expand-lg">
                                     <div class="qty-control">
                                         <button type="button" @click="if(qty > 1) qty--" class="qty-btn">&minus;</button>
                                         <input type="text" class="qty-input" x-model="qty" readonly>

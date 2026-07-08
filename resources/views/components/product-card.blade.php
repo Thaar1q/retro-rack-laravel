@@ -38,14 +38,14 @@
                             Tambah ke Keranjang
                         </button>
                         {{-- Expanded: stepper + confirm --}}
-                        <div x-show="showQty" :style="showQty ? 'display: flex;' : 'display: none;'" style="display: none; align-items: center; gap: 8px; width: 100%;">
+                        <div x-show="showQty" style="display: none;" class="qty-expand">
                             <div class="qty-control">
                                 <button type="button" @click="if(qty > 1) qty--" class="qty-btn">&minus;</button>
                                 <input type="text" class="qty-input" x-model="qty" readonly style="width: 32px;">
                                 <button type="button" @click="if(qty < stock) qty++" class="qty-btn">&plus;</button>
                             </div>
                             <button type="submit" class="btn btn-dark" style="flex:1;" :class="{'is-loading': loading}">
-                                <span x-show="!loading">+ <span x-text="qty"></span></span>
+                                <span x-show="!loading">&#10003;</span>
                                 <span x-show="loading" style="display:none;">...</span>
                             </button>
                             <button type="button" @click="showQty = false; qty = 1" class="btn btn-outline" style="padding: 12px;">&times;</button>
@@ -72,14 +72,14 @@
                     <button type="button" x-show="!showQty" @click="showQty = true" class="btn btn-dark" style="width: 100%;">
                         Tambah
                     </button>
-                    <div x-show="showQty" :style="showQty ? 'display: flex;' : 'display: none;'" style="display: none; align-items: center; gap: 4px; width: 100%;">
+                    <div x-show="showQty" style="display: none;" class="qty-expand-sm">
                         <div class="qty-control" style="width: 60px;">
                             <button type="button" @click="if(qty > 1) qty--" class="qty-btn" style="padding: 0 4px;">&minus;</button>
                             <input type="text" class="qty-input" x-model="qty" readonly style="width: 20px; padding: 0;">
                             <button type="button" @click="if(qty < stock) qty++" class="qty-btn" style="padding: 0 4px;">&plus;</button>
                         </div>
                         <button type="submit" class="btn btn-dark" style="flex:1; padding: 12px 4px;" :class="{'is-loading': loading}">
-                            <span x-show="!loading">+ <span x-text="qty"></span></span>
+                            <span x-show="!loading">&#10003;</span>
                             <span x-show="loading" style="display:none;">...</span>
                         </button>
                         <button type="button" @click="showQty = false; qty = 1" class="btn btn-outline" style="padding: 12px 8px;">&times;</button>

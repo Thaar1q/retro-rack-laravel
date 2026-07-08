@@ -556,6 +556,9 @@ h1, h2, h3, h4, h5, h6 {
 /* Qty expand wrapper for add-to-cart */
 .qty-add-wrapper { flex: 1; }
 .qty-add-wrapper [x-show] { width: 100%; }
+.qty-expand { display: flex; align-items: center; gap: 8px; width: 100%; }
+.qty-expand-sm { display: flex; align-items: center; gap: 4px; width: 100%; }
+.qty-expand-lg { display: flex; align-items: center; gap: 12px; }
 
 /* Product tabs */
 .product-tabs { background-color: var(--color-white); border-radius: 16px; border: 1px solid var(--color-border); overflow: hidden; margin-bottom: 80px; }
