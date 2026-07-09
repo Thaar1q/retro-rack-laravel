@@ -83,6 +83,7 @@ h1, h2, h3, h4, h5, h6 {
     backdrop-filter: blur(8px);
     -webkit-backdrop-filter: blur(8px);
     background-color: rgba(255,255,255,0.95);
+    transform: translateZ(0);
 }
 .header .container {
     display: flex;
